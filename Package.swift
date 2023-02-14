@@ -1,18 +1,18 @@
-// swift-tools-version:5.7.1
+// swift-tools-version:5.2
+//
+//  Package.Swift
+//  SwiftWebSocket
 
 import PackageDescription
 
 let package = Package(
-    name: "SwiftWebSocket",
-    dependencies: [
-        .package(url: "https://github.com/erikhaandrikman/SwiftWebSocket.git", from: "2.1.0")
-    ],
-    targets: [
-        .target(
-            name: "YourTargetName",
-            dependencies: ["SwiftWebSocket"]),
-        .testTarget(
-            name: "YourTargetNameTests",
-            dependencies: ["YourTargetName"]),
-    ]
+        name: "SwiftWebSocket",
+        products: [
+            .library(name: "SwiftWebSocket", targets: ["SwiftWebSocket"])
+        ],
+        dependencies: [],
+        targets: [
+            .target(name: "SwiftWebSocket",
+                    path: "Source")
+        ]
 )
